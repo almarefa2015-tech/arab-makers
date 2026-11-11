@@ -23,7 +23,7 @@ jobs:
 
       - name: Unzip project
         run: |
-          unzip -o makers_proj.zip -d src
+          if [ -f "makers_proj (1).zip" ]; then unzip -o "makers_proj (1).zip" -d src; else unzip -o makers_proj.zip -d src; fi
           ls -la src/proj
 
       - name: Build web + Android project
